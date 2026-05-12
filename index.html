@@ -1,325 +1,386 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sado Faraji - Author & Historian</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sado Faraji - Author & Historian</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --surface: #181818;
+      --card: #1e1e1e;
+      --border: #2e2e2e;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --text: #e8e3d8;
+      --muted: #8a8278;
+    }
 
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: white;
-            line-height: 1.6;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        .header {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(0,0,0,0.3);
-        }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Lora', Georgia, serif;
+      line-height: 1.7;
+    }
 
-        .header h1 {
-            font-size: 3.5rem;
-            color: #d4af37;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
+    /* ── HEADER ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      letter-spacing: .12em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    header p {
+      margin-top: .5rem;
+      color: var(--muted);
+      letter-spacing: .2em;
+      font-size: .85rem;
+      text-transform: uppercase;
+    }
+    .cta-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: .75rem 2rem;
+      background: var(--gold);
+      color: #0f0f0f;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background .2s;
+    }
+    .cta-btn:hover { background: var(--gold-light); }
 
-        .header p {
-            font-size: 1.3rem;
-            color: #cccccc;
-            font-style: italic;
-        }
+    /* ── NAV ── */
+    nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .8rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 1rem 1.5rem;
+      border-bottom: 2px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+    nav a:hover, nav a.active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
 
-        /* PURCHASE SECTION STYLES */
-        .purchase-section {
-            text-align: center;
-            padding: 40px 20px;
-            background: rgba(212,175,55,0.1);
-            margin: 20px 0;
-        }
+    /* ── SECTIONS ── */
+    section { padding: 4rem 1.5rem; max-width: 1100px; margin: 0 auto; }
 
-        .purchase-section h2 {
-            font-size: 2rem;
-            color: #d4af37;
-            margin-bottom: 20px;
-        }
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--gold);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      padding-bottom: .75rem;
+      border-bottom: 1px solid var(--border);
+    }
 
-        .main-buy-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #d4af37, #f4d03f);
-            color: #1a1a2e;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(212,175,55,0.3);
-        }
+    /* ── BOOKS GRID ── */
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 2rem;
+    }
+    .book-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      transition: transform .2s, border-color .2s;
+    }
+    .book-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .book-card img { width: 100%; aspect-ratio: 2/3; object-fit: cover; display: block; }
+    .book-card .info { padding: 1rem; }
+    .book-card .category {
+      font-size: .68rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .4rem;
+    }
+    .book-card h3 { font-size: .95rem; margin-bottom: .5rem; line-height: 1.4; }
+    .book-card p { font-size: .78rem; color: var(--muted); margin-bottom: .8rem; line-height: 1.5; }
+    .book-card a {
+      display: inline-block;
+      font-size: .75rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 1px;
+    }
 
-        .main-buy-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(212,175,55,0.5);
-            background: linear-gradient(45deg, #f4d03f, #d4af37);
-        }
+    /* ── MAKALA SECTION ── */
+    .makala-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .makala-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 2px;
+      padding: 1.5rem;
+      transition: transform .2s, border-color .2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .makala-card:hover { transform: translateY(-3px); border-color: var(--gold); }
+    .makala-card .tag {
+      font-size: .68rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .6rem;
+    }
+    .makala-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      margin-bottom: .6rem;
+      line-height: 1.4;
+    }
+    .makala-card p { font-size: .85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+    .makala-card .meta {
+      font-size: .72rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+    }
+    .soma-zaidi {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: .65rem 1.75rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-size: .8rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: background .2s, color .2s;
+    }
+    .soma-zaidi:hover { background: var(--gold); color: #0f0f0f; }
 
-        .book-gallery {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+    /* ── ABOUT ── */
+    .about-inner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    @media (max-width: 600px) { .about-inner { grid-template-columns: 1fr; } }
+    .about-inner img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--gold);
+    }
+    .about-inner p { color: var(--muted); font-size: .95rem; }
 
-        .gallery-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #d4af37;
-            margin-bottom: 50px;
-        }
-
-        .book-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .book-item {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .book-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-
-        .book-item img {
-            width: 100%;
-            max-width: 200px;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-        }
-
-        .book-item h3 {
-            font-size: 1.4rem;
-            color: #d4af37;
-            margin-bottom: 10px;
-        }
-
-        .book-item p {
-            color: #cccccc;
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
-
-        .book-category {
-            background: rgba(212,175,55,0.2);
-            color: #d4af37;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        /* INDIVIDUAL BUY BUTTON STYLES */
-        .book-buy-button {
-            display: inline-block;
-            background: rgba(212,175,55,0.8);
-            color: #1a1a2e;
-            padding: 8px 20px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-
-        .book-buy-button:hover {
-            background: #d4af37;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(212,175,55,0.4);
-        }
-
-        .author-section {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(0,0,0,0.2);
-            margin-top: 60px;
-        }
-
-        .author-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 30px;
-            border: 4px solid #d4af37;
-            object-fit: cover;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 30px;
-            background: rgba(0,0,0,0.5);
-            margin-top: 40px;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .book-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 20px;
-            }
-
-            .main-buy-button {
-                padding: 12px 30px;
-                font-size: 1rem;
-            }
-        }
-    </style>
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
 </head>
 <body>
-    <!-- HEADER -->
-    <div class="header">
-        <h1>SADO FARAJI</h1>
-        <p>Author • Historian • Critical Thinker</p>
+
+<header>
+  <h1>Sado Faraji</h1>
+  <p>Author &bull; Historian &bull; Critical Thinker</p>
+  <a class="cta-btn" href="https://books2read.com/ap/xy0Abp/Sado-Faraji">📚 Get All Books</a>
+</header>
+
+<nav>
+  <a href="#vitabu" class="active">Vitabu</a>
+  <a href="#makala">Makala</a>
+  <a href="#kuhusu">Kuhusu</a>
+</nav>
+
+<!-- ═══ VITABU ═══ -->
+<section id="vitabu">
+  <h2>📖 Vitabu Vilivyochapishwa</h2>
+  <div class="books-grid">
+
+    <div class="book-card">
+      <img src="images/Spirit-of-resistance.jpg" alt="Spirit of Resistance" />
+      <div class="info">
+        <div class="category">Historical Biography</div>
+        <h3>Spirit of Resistance</h3>
+        <p>The Legend of Mkwawa — The untold story of resistance against colonial oppression in East Africa.</p>
+        <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji">Buy Now →</a>
+      </div>
     </div>
 
-    <!-- PURCHASE SECTION -->
-    <div class="purchase-section">
-        <h2>📚 Get All Books</h2>
-        <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji" target="_blank" class="main-buy-button">
-            🛒 Available on All Major Platforms
-        </a>
-        <p style="margin-top: 15px; color: #cccccc;">Amazon • Apple Books • Google Play • Kobo & More</p>
+    <div class="book-card">
+      <img src="images/THE-BLIND-OBEDIENCE-2.jpg" alt="The Blind Obedience" />
+      <div class="info">
+        <div class="category">Religious Critique</div>
+        <h3>The Blind Obedience</h3>
+        <p>Conscience, Faith, and the Quiet Danger of Obedience Without Question.</p>
+        <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji">Buy Now →</a>
+      </div>
     </div>
 
-    <!-- BOOK GALLERY -->
-    <div class="book-gallery">
-        <h2 class="gallery-title">Published Works</h2>
-        
-        <div class="book-grid">
-            
-            <!-- SPIRIT OF RESISTANCE -->
-            <div class="book-item">
-                <div class="book-category">Historical Biography</div>
-                <img src="images/Spirit-of-resistance.jpg" alt="Spirit of Resistance">
-                <h3>Spirit of Resistance</h3>
-                <p>The Legend of Mkwawa - The untold story of resistance against colonial oppression in East Africa.</p>
-                <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji" target="_blank" class="book-buy-button">Buy Now</a>
-            </div>
-
-            <!-- BLIND OBEDIENCE -->
-            <div class="book-item">
-                <div class="book-category">Religious Critique</div>
-                <img src="images/THE-BLIND-OBEDIENCE-2.jpg" alt="The Blind Obedience">
-                <h3>The Blind Obedience</h3>
-                <p>Conscience, Faith, and the Quiet Danger of Obedience Without Question</p>
-                <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji" target="_blank" class="book-buy-button">Buy Now</a>
-            </div>
-
-            <!-- INDELIBLE ARCHIVE -->
-            <div class="book-item">
-                <div class="book-category">Literary Fiction</div>
-                <img src="images/Indelible-archive.jpg" alt="The Indelible Archive">
-                <h3>The Indelible Archive</h3>
-                <p>When the Erased Refuse to Stay Silent - A powerful narrative of memory and resistance.</p>
-                <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji" target="_blank" class="book-buy-button">Buy Now</a>
-            </div>
-
-            <!-- SHADOWS OF THE DESERT -->
-            <div class="book-item">
-                <div class="book-category">Middle East History</div>
-                <img src="images/Shadows-of-desert-one.jpg" alt="Shadows of the Desert">
-                <h3>Shadows of the Desert</h3>
-                <p>The Role of Zionism in the Birth of Saudi Arabia - An investigative historical analysis.</p>
-                <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji" target="_blank" class="book-buy-button">Buy Now</a>
-            </div>
-
-            <!-- CALIPHATE AND FOUNDATIONS -->
-            <div class="book-item">
-                <div class="book-category">Islamic History</div>
-                <img src="images/CALIPHATE-AND-FOUNDATIONS-OF-DISPUTE.jpg" alt="Caliphate and the Foundations of Dispute">
-                <h3>Caliphate and the Foundations of Dispute</h3>
-                <p>The Role of Umar Ibn al-Khattab in Shaping the Political Legacy of the Prophet</p>
-                <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji" target="_blank" class="book-buy-button">Buy Now</a>
-            </div>
-
-            <!-- MTEGO WA KAFARA -->
-            <div class="book-item">
-                <div class="book-category">Swahili Literature</div>
-                <img src="images/MTEGO-WA-KAFARA.jpg" alt="Mtego wa Kafara">
-                <h3>Mtego wa Kafara</h3>
-                <p>Jinsi Vijana Walivyogeuzwa Silaha Dhidi ya Jamhuri - A compelling work of Swahili literature.</p>
-                <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji" target="_blank" class="book-buy-button">Buy Now</a>
-            </div>
-
-            <!-- DIGITAL INSURRECTION -->
-            <div class="book-item">
-                <div class="book-category">Political Analysis</div>
-                <img src="images/Digital-insurrection-the-collapse-of-truth.jpg" alt="Digital Insurrection">
-                <h3>Digital Insurrection</h3>
-                <p>The Collapse of Truth - Part II: How Information Warfare, AI Manipulation, and Psychological Control Are Reshaping Humanity</p>
-                <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji" target="_blank" class="book-buy-button">Buy Now</a>
-            </div>
-
-            <!-- THE 7 LAWS -->
-            <div class="book-item">
-                <div class="book-category">Business Philosophy</div>
-                <img src="images/THE-7-LAWS-OF-CULTURAL-SHADOW-POWER.jpg" alt="The 7 Laws of Cultural Shadow Power">
-                <h3>The 7 Laws of Cultural Shadow Power</h3>
-                <p>How to Read, Navigate, and Leverage the Invisible Dynamics That Determine Who Wins in Global Business</p>
-                <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji" target="_blank" class="book-buy-button">Buy Now</a>
-            </div>
-
-            <!-- BRIDGE OF HOPE -->
-            <div class="book-item">
-                <div class="book-category">Fiction</div>
-                <img src="images/bridge-of-hope.jpg" alt="The Bridge of Hope and Sorrow">
-                <h3>The Bridge of Hope and Sorrow</h3>
-                <p>A moving tale exploring the journey between hope and heartbreak.</p>
-                <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji" target="_blank" class="book-buy-button">Buy Now</a>
-            </div>
-
-        </div>
+    <div class="book-card">
+      <img src="images/Indelible-archive.jpg" alt="The Indelible Archive" />
+      <div class="info">
+        <div class="category">Literary Fiction</div>
+        <h3>The Indelible Archive</h3>
+        <p>When the Erased Refuse to Stay Silent — A powerful narrative of memory and resistance.</p>
+        <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji">Buy Now →</a>
+      </div>
     </div>
 
-    <!-- AUTHOR SECTION -->
-    <div class="author-section">
-        <img src="images/author-photo.jpg" alt="Sado Faraji" class="author-photo">
-        <h2>About the Author</h2>
-        <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem;">
-            Sado Faraji is a distinguished author and historian whose works span historical biography, 
-            religious critique, and literary fiction. With a focus on African history, Islamic civilization, 
-            and social justice, Faraji's writings challenge conventional narratives and offer fresh 
-            perspectives on power, resistance, and human dignity.
-        </p>
+    <div class="book-card">
+      <img src="images/Shadows-of-desert-one.jpg" alt="Shadows of the Desert" />
+      <div class="info">
+        <div class="category">Middle East History</div>
+        <h3>Shadows of the Desert</h3>
+        <p>The Role of Zionism in the Birth of Saudi Arabia — An investigative historical analysis.</p>
+        <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji">Buy Now →</a>
+      </div>
     </div>
 
-    <!-- FOOTER -->
-    <div class="footer">
-        <p>&copy; 2026 Sado Faraji. All rights reserved.</p>
-        <p>Contact: info@sadofaraji.com</p>
-        <p><a href="https://books2read.com/ap/xy0Abp/Sado-Faraji" target="_blank" style="color: #d4af37;">📚 Shop All Books</a></p>
+    <div class="book-card">
+      <img src="images/CALIPHATE-AND-FOUNDATIONS-OF-DISPUTE.jpg" alt="Caliphate and the Foundations of Dispute" />
+      <div class="info">
+        <div class="category">Islamic History</div>
+        <h3>Caliphate and the Foundations of Dispute</h3>
+        <p>The Role of Umar Ibn al-Khattab in Shaping the Political Legacy of the Prophet.</p>
+        <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji">Buy Now →</a>
+      </div>
     </div>
+
+    <div class="book-card">
+      <img src="images/MTEGO-WA-KAFARA.jpg" alt="Mtego wa Kafara" />
+      <div class="info">
+        <div class="category">Swahili Literature</div>
+        <h3>Mtego wa Kafara</h3>
+        <p>Jinsi Vijana Walivyogeuzwa Silaha Dhidi ya Jamhuri.</p>
+        <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji">Buy Now →</a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <img src="images/Digital-insurrection-the-collapse-of-truth.jpg" alt="Digital Insurrection" />
+      <div class="info">
+        <div class="category">Political Analysis</div>
+        <h3>Digital Insurrection</h3>
+        <p>The Collapse of Truth — How Information Warfare, AI Manipulation, and Psychological Control Are Reshaping Humanity.</p>
+        <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji">Buy Now →</a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <img src="images/THE-7-LAWS-OF-CULTURAL-SHADOW-POWER.jpg" alt="The 7 Laws of Cultural Shadow Power" />
+      <div class="info">
+        <div class="category">Business Philosophy</div>
+        <h3>The 7 Laws of Cultural Shadow Power</h3>
+        <p>How to Read, Navigate, and Leverage the Invisible Dynamics That Determine Who Wins in Global Business.</p>
+        <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji">Buy Now →</a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <img src="images/bridge-of-hope.jpg" alt="The Bridge of Hope and Sorrow" />
+      <div class="info">
+        <div class="category">Fiction</div>
+        <h3>The Bridge of Hope and Sorrow</h3>
+        <p>A moving tale exploring the journey between hope and heartbreak.</p>
+        <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji">Buy Now →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ MAKALA ═══ -->
+<section id="makala" style="background: var(--surface); max-width:100%; padding: 4rem 0;">
+  <div style="max-width:1100px; margin:0 auto; padding: 0 1.5rem;">
+    <h2>✍️ Makala za Hivi Karibuni</h2>
+    <div class="makala-grid">
+
+      <!-- MAKALA 1 — Badilisha kulingana na makala yako halisi -->
+      <a class="makala-card" href="makala/vita-vya-algorithm.html">
+        <div class="tag">📌 Siasa · Teknolojia</div>
+        <h3>Vita vya Algorithm: Jinsi Mtandao Unavyogeuzwa Silaha dhidi ya Afrika</h3>
+        <p>Uchambuzi wa kina wa mabadiliko ya maandamano ya Oktoba 2025 Tanzania, vita vya kidijitali, na nguvu za nje zinazopigana kwa rasilimali za Afrika.</p>
+        <div class="meta">Mei 2025 &nbsp;·&nbsp; Dakika 12 kusoma</div>
+      </a>
+
+      <!-- MAKALA 2 -->
+      <a class="makala-card" href="makala/mkwawa-na-upinzani.html">
+        <div class="tag">📌 Historia · Afrika Mashariki</div>
+        <h3>Mkwawa na Roho ya Upinzani: Masimulizi Ambayo Historia Ilijaribu Kuzika</h3>
+        <p>Kiongozi wa Wahehe aliyekataa kunyenyekea. Safari ya nguvu, heshima, na utu katika mapigano dhidi ya ukoloni wa Ujerumani.</p>
+        <div class="meta">Aprili 2025 &nbsp;·&nbsp; Dakika 8 kusoma</div>
+      </a>
+
+      <!-- MAKALA 3 -->
+      <a class="makala-card" href="makala/uislamu-na-siasa.html">
+        <div class="tag">📌 Dini · Jiografia ya Kisiasa</div>
+        <h3>Ukhalifa na Mizizi ya Mgawanyiko: Umar na Misingi ya Siasa ya Kiislamu</h3>
+        <p>Jinsi maamuzi ya kisiasa ya karne ya saba yanavyoendelea kuunda mgawanyiko wa kidini hadi leo.</p>
+        <div class="meta">Machi 2025 &nbsp;·&nbsp; Dakika 10 kusoma</div>
+      </a>
+
+    </div>
+
+    <a class="soma-zaidi" href="makala.html">Soma Makala Zote →</a>
+  </div>
+</section>
+
+<!-- ═══ KUHUSU ═══ -->
+<section id="kuhusu">
+  <h2>👤 Kuhusu Mwandishi</h2>
+  <div class="about-inner">
+    <img src="images/author-photo.jpg" alt="Sado Faraji" />
+    <p>Sado Faraji is a distinguished author and historian whose works span historical biography, religious critique, and literary fiction. With a focus on African history, Islamic civilization, and social justice, Faraji's writings challenge conventional narratives and offer fresh perspectives on power, resistance, and human dignity.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Sado Faraji. All rights reserved.</p>
+  <p style="margin-top:.5rem;">
+    Contact: <a href="mailto:info@sadofaraji.com">info@sadofaraji.com</a>
+    &nbsp;|&nbsp;
+    <a href="https://books2read.com/ap/xy0Abp/Sado-Faraji">📚 Shop All Books</a>
+  </p>
+</footer>
 
 </body>
 </html>
