@@ -121,12 +121,6 @@ permalink: /books/
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin: 30px 0;">
 
 <div style="text-align: center;">
-  <img src="/images/7-laws-cultural-shadow.jpg" alt="The 7 Laws of Cultural Shadow Power" style="width: 200px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-  <h3>The 7 Laws of Cultural Shadow Power</h3>
-  <p>How to Read, Navigate, and Leverage the Invisible Dynamics That Determine Who Wins in Global Business.</p>
-</div>
-
-<div style="text-align: center;">
   <img src="/images/power-whispers.jpg" alt="Power Whispers" style="width: 200px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
   <h3>Power Whispers</h3>
   <p><em>8 Laws of Influence That History tried to Hide</em></p>
