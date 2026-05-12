@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ✏️ BADILISHA: Kichwa cha makala yako -->
+  <title>KICHWA CHA MAKALA — Sado Faraji</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f0f0f; --surface: #181818; --card: #1e1e1e;
+      --border: #2e2e2e; --gold: #c9a84c; --gold-light: #e8c97a;
+      --text: #e8e3d8; --muted: #8a8278;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--bg); color:var(--text); font-family:'Lora',Georgia,serif; line-height:1.8; }
+
+    /* NAV */
+    .topbar {
+      background:var(--surface);
+      border-bottom:1px solid var(--border);
+      padding:.85rem 1.5rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .topbar a { color:var(--gold); text-decoration:none; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; }
+
+    /* HERO */
+    .article-hero {
+      background:var(--surface);
+      border-bottom:1px solid var(--border);
+      padding:3.5rem 1.5rem;
+      text-align:center;
+      max-width:800px;
+      margin:0 auto;
+    }
+    .article-hero .tag {
+      display:inline-block;
+      font-size:.7rem;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:var(--gold);
+      border:1px solid var(--gold);
+      padding:.25rem .75rem;
+      border-radius:2px;
+      margin-bottom:1.25rem;
+    }
+    .article-hero h1 {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.6rem,4vw,2.6rem);
+      line-height:1.3;
+      margin-bottom:1rem;
+    }
+    .article-hero .meta { color:var(--muted); font-size:.82rem; letter-spacing:.08em; }
+
+    /* BODY */
+    article {
+      max-width:720px;
+      margin:3rem auto;
+      padding:0 1.5rem;
+    }
+
+    article p { margin-bottom:1.5rem; font-size:1.05rem; color:var(--text); }
+
+    article h2 {
+      font-family:'Playfair Display',serif;
+      font-size:1.4rem;
+      color:var(--gold);
+      margin:2.5rem 0 1rem;
+      padding-bottom:.5rem;
+      border-bottom:1px solid var(--border);
+    }
+
+    article h3 {
+      font-family:'Playfair Display',serif;
+      font-size:1.1rem;
+      margin:2rem 0 .75rem;
+      font-style:italic;
+    }
+
+    article blockquote {
+      border-left:3px solid var(--gold);
+      padding:.75rem 1.25rem;
+      margin:1.5rem 0;
+      background:var(--card);
+      color:var(--muted);
+      font-style:italic;
+    }
+
+    article ul, article ol {
+      margin:0 0 1.5rem 1.5rem;
+    }
+    article li { margin-bottom:.5rem; font-size:1rem; }
+
+    /* SHARE / FOOTER */
+    .article-footer {
+      max-width:720px;
+      margin:3rem auto 4rem;
+      padding:2rem 1.5rem;
+      border-top:1px solid var(--border);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:1rem;
+    }
+    .article-footer a {
+      color:var(--gold);
+      text-decoration:none;
+      font-size:.8rem;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+    .buy-btn {
+      display:inline-block;
+      padding:.65rem 1.5rem;
+      background:var(--gold);
+      color:#0f0f0f;
+      font-family:'Playfair Display',serif;
+      font-weight:700;
+      text-decoration:none;
+      border-radius:2px;
+      font-size:.85rem;
+    }
+
+    footer { background:var(--surface); border-top:1px solid var(--border); text-align:center; padding:2rem; color:var(--muted); font-size:.8rem; }
+    footer a { color:var(--gold); text-decoration:none; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="../index.html">← Nyumbani</a>
+  <a href="../makala.html">Makala Zote</a>
+</div>
+
+<!-- ════ HERO ════ -->
+<div style="background:var(--surface); border-bottom:1px solid var(--border); padding:3.5rem 1.5rem; text-align:center;">
+  <div style="max-width:800px; margin:0 auto;">
+
+    <!-- ✏️ BADILISHA: Kategoria ya makala -->
+    <div style="display:inline-block; font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold); padding:.25rem .75rem; border-radius:2px; margin-bottom:1.25rem;">
+      Siasa · Teknolojia
+    </div>
+
+    <!-- ✏️ BADILISHA: Kichwa cha makala -->
+    <h1 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,4vw,2.6rem); line-height:1.3; margin-bottom:1rem;">
+      ANDIKA KICHWA CHA MAKALA HAPA
+    </h1>
+
+    <!-- ✏️ BADILISHA: Tarehe na muda wa kusoma -->
+    <div style="color:var(--muted); font-size:.82rem; letter-spacing:.08em;">
+      Mei 2025 &nbsp;·&nbsp; Dakika 10 kusoma &nbsp;·&nbsp; Na <strong style="color:var(--text);">Sado Faraji</strong>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════ MAUDHUI ════ -->
+<article>
+
+  <!-- ✏️ ANDIKA MAKALA YAKO HAPA — Tumia <p> kwa aya, <h2> kwa vichwa vya sehemu -->
+
+  <p>
+    Hii ni aya ya kwanza ya makala yako. Anza na wazo kuu — swali muhimu, tukio la kushangaza, 
+    au madai ya nguvu ambayo itawashika wasomaji tangu mwanzo.
+  </p>
+
+  <h2>Kichwa cha Sehemu ya Kwanza</h2>
+
+  <p>
+    Endelea na maelezo ya kina. Tumia aya fupi — sentensi 4 hadi 6 kwa aya moja. 
+    Hii inafanya makala iwe rahisi kusomeka kwenye simu.
+  </p>
+
+  <blockquote>
+    Hapa unaweza kuweka nukuu muhimu au msemo wa mtu maarufu unaohusiana na mada.
+  </blockquote>
+
+  <h2>Kichwa cha Sehemu ya Pili</h2>
+
+  <p>
+    Endelea na uchambuzi wako. Unaweza kutumia orodha:
+  </p>
+
+  <ul>
+    <li>Hoja ya kwanza</li>
+    <li>Hoja ya pili</li>
+    <li>Hoja ya tatu</li>
+  </ul>
+
+  <h2>Hitimisho</h2>
+
+  <p>
+    Maliza kwa wazo zito. Rudisha wasomaji kwenye swali la mwanzo — na uwaeleze jibu lako.
+  </p>
+
+</article>
+
+<!-- ════ FOOTER YA MAKALA ════ -->
+<div class="article-footer">
+  <a href="../makala.html">← Makala Zingine</a>
+  <a class="buy-btn" href="https://books2read.com/ap/xy0Abp/Sado-Faraji">📚 Nunua Vitabu Vyangu</a>
+</div>
+
+<footer>
+  <p>© 2026 Sado Faraji — <a href="../index.html">Nyumbani</a> · <a href="mailto:info@sadofaraji.com">info@sadofaraji.com</a></p>
+</footer>
+
+</body>
+</html>
