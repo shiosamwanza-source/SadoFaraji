@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOU Baina ya Serikali na Makanisa: Ukweli, Huduma na Jinsi ya Kuliponya Taifa — Sado Faraji</title>
+  <meta name="description" content="Taifa haliwezi kupona kwa propaganda. Taifa hupona kwa ukweli. Uchambuzi wa kina wa MOU kati ya Serikali na Makanisa. Na Sado Faraji." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f0f0f; --surface: #181818; --card: #1e1e1e;
+      --border: #2e2e2e; --gold: #c9a84c; --gold-light: #e8c97a;
+      --text: #e8e3d8; --muted: #8a8278;
+      --green: #2a6049; --green-dim: #0d1f18;
+      --red-dim: #1f0d0d; --red: #7a2020;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--bg); color:var(--text); font-family:'Lora',Georgia,serif; line-height:1.85; }
+
+    /* TOPBAR */
+    .topbar {
+      background:var(--surface); border-bottom:1px solid var(--border);
+      padding:.85rem 1.5rem; display:flex; justify-content:space-between; align-items:center;
+    }
+    .topbar a { color:var(--gold); text-decoration:none; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; }
+    .topbar a:hover { color:var(--gold-light); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(160deg, #0d1209 0%, #0f0f0f 100%);
+      border-bottom:1px solid var(--border);
+      padding:4.5rem 1.5rem 3.5rem; text-align:center;
+    }
+    .hero-inner { max-width:820px; margin:0 auto; }
+    .tag {
+      display:inline-block; font-size:.68rem; letter-spacing:.2em; text-transform:uppercase;
+      color:#7dcfa0; border:1px solid var(--green);
+      padding:.3rem .9rem; border-radius:2px; margin-bottom:1.5rem;
+    }
+    .hero h1 {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.7rem,4.5vw,2.8rem); line-height:1.22;
+      margin-bottom:.75rem; color:#fff;
+    }
+    .hero .subtitle { font-size:1rem; color:var(--muted); font-style:italic; margin-bottom:1.5rem; line-height:1.6; }
+    .meta { font-size:.78rem; color:var(--muted); letter-spacing:.1em; }
+    .meta strong { color:var(--text); }
+    .divider { max-width:800px; margin:2.5rem auto 0; height:1px; background:var(--border); }
+
+    /* ARTICLE */
+    article { max-width:720px; margin:3rem auto 2rem; padding:0 1.5rem; }
+    article p { margin-bottom:1.6rem; font-size:1.05rem; }
+    article h2 {
+      font-family:'Playfair Display',serif; font-size:1.45rem; color:var(--gold);
+      margin:3rem 0 1rem; padding-bottom:.6rem; border-bottom:1px solid var(--border);
+    }
+    article blockquote {
+      border-left:3px solid var(--gold); padding:.9rem 1.4rem; margin:2rem 0;
+      background:var(--card); color:var(--muted); font-style:italic; font-size:.95rem;
+    }
+    article ul { margin:0 0 1.6rem 1.75rem; }
+    article li { margin-bottom:.55rem; font-size:1rem; }
+
+    /* CALLOUT */
+    .callout {
+      background:var(--card); border:1px solid var(--border);
+      border-left:3px solid var(--gold); padding:1.25rem 1.5rem;
+      margin:2rem 0; border-radius:2px;
+    }
+    .callout p { margin-bottom:.6rem; font-size:.95rem; }
+    .callout p:last-child { margin-bottom:0; }
+
+    /* WARN BOX */
+    .warn-box {
+      background:var(--red-dim); border:1px solid var(--red);
+      border-left:3px solid var(--red); padding:1.25rem 1.5rem;
+      margin:2rem 0; border-radius:2px;
+    }
+    .warn-box .label { font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:#e07070; margin-bottom:.75rem; }
+    .warn-box p { font-size:.95rem; color:#c4a0a0; margin-bottom:.5rem; }
+    .warn-box p:last-child { margin-bottom:0; }
+    .warn-box ul { margin-left:1.25rem; }
+    .warn-box li { color:#c4a0a0; font-size:.93rem; margin-bottom:.45rem; }
+
+    /* INFO GRID — mfumo wa MOU */
+    .info-grid {
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+      gap:1rem; margin:1.5rem 0 2rem;
+    }
+    .info-item {
+      background:var(--card); border:1px solid var(--border);
+      padding:1.1rem 1.25rem; border-radius:2px;
+    }
+    .info-item .icon { font-size:1.4rem; margin-bottom:.4rem; }
+    .info-item h4 { font-size:.85rem; color:var(--gold); margin-bottom:.4rem; letter-spacing:.05em; }
+    .info-item p { font-size:.8rem; color:var(--muted); margin:0; line-height:1.5; }
+
+    /* ════ GHARAMA TABLE ════ */
+    .gharama-section {
+      background:var(--surface); border:1px solid var(--border);
+      border-radius:3px; margin:3rem 0; overflow:hidden;
+    }
+    .gharama-header {
+      background:#151510; padding:1.25rem 1.5rem;
+      border-bottom:1px solid var(--border);
+    }
+    .gharama-header h3 {
+      font-family:'Playfair Display',serif; font-size:1.1rem;
+      color:var(--gold); margin:0;
+    }
+    .gharama-header p { font-size:.8rem; color:var(--muted); margin-top:.3rem; }
+    .gharama-row {
+      display:grid; grid-template-columns:1fr auto auto;
+      gap:1rem; padding:1.1rem 1.5rem; border-bottom:1px solid var(--border);
+      align-items:center;
+    }
+    .gharama-row:last-child { border-bottom:none; }
+    .gharama-row .cat { font-size:.9rem; }
+    .gharama-row .cat .sub { font-size:.78rem; color:var(--muted); margin-top:.2rem; }
+    .gharama-row .per-yr {
+      font-family:'Playfair Display',serif; font-size:.9rem;
+      color:var(--gold-light); text-align:right; white-space:nowrap;
+    }
+    .gharama-row .total {
+      font-family:'Playfair Display',serif; font-size:.85rem;
+      color:var(--muted); text-align:right; white-space:nowrap;
+    }
+    .gharama-totals {
+      background:#1a1a0d; padding:1.25rem 1.5rem;
+      display:flex; justify-content:space-between; align-items:center;
+      flex-wrap:wrap; gap:.75rem;
+    }
+    .gharama-totals .label { font-size:.78rem; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; }
+    .gharama-totals .amount {
+      font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--gold);
+    }
+    .gharama-totals .total-all {
+      font-family:'Playfair Display',serif; font-size:1rem; color:var(--gold-light);
+    }
+    @media(max-width:500px){ .gharama-row { grid-template-columns:1fr; } .gharama-row .per-yr, .gharama-row .total { text-align:left; } }
+
+    /* CHANGAMOTO */
+    .changamoto-list { display:flex; flex-direction:column; gap:.85rem; margin:1.5rem 0 2rem; }
+    .ch-item {
+      background:var(--red-dim); border:1px solid var(--red);
+      padding:1rem 1.25rem; border-radius:2px;
+      display:grid; grid-template-columns:2rem 1fr; gap:.6rem; align-items:start;
+    }
+    .ch-item .num {
+      font-family:'Playfair Display',serif; font-size:1.2rem;
+      color:#e07070; line-height:1.1;
+    }
+    .ch-item h4 { font-size:.9rem; color:#e07070; margin-bottom:.3rem; }
+    .ch-item p { font-size:.85rem; color:#b08080; margin:0; line-height:1.5; }
+
+    /* MAPENDEKEZO */
+    .mapendekezo-list { display:flex; flex-direction:column; gap:.85rem; margin:1.5rem 0 2rem; }
+    .mp-item {
+      background:var(--green-dim); border:1px solid var(--green);
+      padding:1rem 1.25rem; border-radius:2px;
+      display:flex; gap:.75rem; align-items:flex-start;
+    }
+    .mp-item .icon { font-size:1.1rem; flex-shrink:0; margin-top:.1rem; }
+    .mp-item p { font-size:.92rem; color:#80c4a0; margin:0; line-height:1.55; }
+
+    /* SOLUTIONS 3 */
+    .solutions { display:flex; flex-direction:column; gap:1rem; margin:1.5rem 0 2rem; }
+    .sol-item {
+      background:var(--card); border:1px solid var(--border);
+      padding:1.25rem 1.5rem; border-radius:2px;
+      display:grid; grid-template-columns:2.5rem 1fr; gap:.75rem; align-items:start;
+    }
+    .sol-item .num { font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold); line-height:1; }
+    .sol-item h4 { font-size:.95rem; color:var(--text); margin-bottom:.35rem; }
+    .sol-item p { font-size:.88rem; color:var(--muted); margin:0; line-height:1.6; }
+    .sol-item ul { margin:.4rem 0 0 1.1rem; }
+    .sol-item li { font-size:.85rem; color:var(--muted); margin-bottom:.3rem; }
+
+    /* CLOSING */
+    .closing-box {
+      background:var(--surface); border:1px solid var(--border);
+      padding:2.5rem 2rem; margin:3rem 0; border-radius:3px; text-align:center;
+    }
+    .closing-box p { color:var(--muted); font-size:.95rem; margin-bottom:.75rem; }
+    .closing-box .final-q {
+      font-family:'Playfair Display',serif; font-size:1.2rem;
+      color:var(--gold-light); font-style:italic; line-height:1.6;
+    }
+
+    /* ARTICLE FOOTER */
+    .article-footer {
+      max-width:720px; margin:2rem auto 5rem; padding:2rem 1.5rem;
+      border-top:1px solid var(--border);
+      display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;
+    }
+    .article-footer a.back { color:var(--gold); text-decoration:none; font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; }
+    .buy-btn {
+      display:inline-block; padding:.7rem 1.75rem; background:var(--gold); color:#0f0f0f;
+      font-family:'Playfair Display',serif; font-weight:700; text-decoration:none;
+      border-radius:2px; font-size:.88rem; transition:background .2s;
+    }
+    .buy-btn:hover { background:var(--gold-light); }
+
+    footer { background:var(--surface); border-top:1px solid var(--border); text-align:center; padding:2rem; color:var(--muted); font-size:.8rem; }
+    footer a { color:var(--gold); text-decoration:none; }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a href="../index.html">← Nyumbani</a>
+  <a href="../makala.html">Makala Zote</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="tag">⚖️ Sera · Dini · Fedha za Umma</div>
+    <h1>MOU Baina ya Serikali na Makanisa:<br>Ukweli, Huduma za Jamii na Jinsi ya Kuliponya Taifa kwa Uwazi</h1>
+    <p class="subtitle">Taifa haliwezi kupona kwa propaganda. Taifa hupona kwa ukweli.</p>
+    <div class="meta">2025 &nbsp;·&nbsp; Dakika 14 kusoma &nbsp;·&nbsp; Na <strong>Sado Faraji</strong></div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- BODY -->
+<article>
+
+  <p>
+    Kuna jambo moja ambalo Watanzania tunapaswa kulikubali kwa ujasiri mkubwa: <strong>Taifa haliwezi kupona kwa propaganda. Taifa hupona kwa ukweli.</strong>
+  </p>
+
+  <p>
+    Mada ya Mkataba wa Maelewano (MoU) kati ya Serikali na Makanisa — hasa kupitia mfumo wa CSSC (Christian Social Services Commission) — imekuwa ikijirudia kila taifa linapoingia kwenye sintofahamu. Wakati wa mjadala wa DP World, wakati wa vurugu za Oktoba 29, na kila kunapotokea mvutano wa kitaifa. Kila mara hisia za udini huibuka. Na kila mara majibu yanayotolewa hayatoshi kuzima mashaka.
+  </p>
+
+  <blockquote>
+    Tatizo si kuuliza maswali. Tatizo ni taifa kukimbia ukweli.
+  </blockquote>
+
+  <!-- UKWELI 1 -->
+  <h2>⚠️ Ukweli wa Kwanza: MOU Si "Misaada wa Ulaya" Pekee</h2>
+
+  <p>Moja ya majibu yanayotolewa mara kwa mara ni: <em>"Hii ni misaada ya makanisa kutoka Ulaya."</em> Lakini ukweli kamili ni mpana zaidi kuliko jibu hilo.</p>
+
+  <p>Ndiyo, taasisi za kidini hupokea misaada kutoka nje kwa shughuli za kijamii. Lakini MOU yenyewe ni <strong>mfumo rasmi wa ushirikiano</strong> kati ya Serikali ya Tanzania na taasisi za makanisa katika utoaji wa:</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="icon">🏫</div><h4>Elimu</h4><p>Shule za msingi, sekondari na vyuo vinavyoendeshwa na makanisa</p></div>
+    <div class="info-item"><div class="icon">🏥</div><h4>Afya</h4><p>Hospitali, zahanati na vituo vya afya vya kidini</p></div>
+    <div class="info-item"><div class="icon">🤝</div><h4>Huduma za Jamii</h4><p>Watoto yatima, wazee, watu wenye ulemavu</p></div>
+    <div class="info-item"><div class="icon">🏗️</div><h4>Miundombinu</h4><p>Majengo, umeme, maji na barabara za vituo</p></div>
+  </div>
+
+  <div class="callout">
+    <p>Ndani ya mfumo huo: serikali inalipa mishahara ya maelfu ya watumishi, inatoa ruzuku, inapeleka dawa kupitia MSD, inatoa misamaha ya kodi — na fedha hizi hupitishwa bungeni kupitia <strong>bajeti za taifa</strong>.</p>
+    <p>Huo ndio ukweli. Na taifa haliwezi kupona kwa kuficha ukweli huo.</p>
+  </div>
+
+  <!-- SWALI KUBWA -->
+  <h2>🧠 Swali Kubwa Ambalo Wananchi Wanauliza</h2>
+
+  <blockquote>
+    "Kama ni misaada binafsi ya dini, kwanini ipitie Bungeni?"
+  </blockquote>
+
+  <p>
+    Hilo ni swali la msingi kabisa katika mfumo wa uwajibikaji wa umma. Na jibu la kweli ni hili: fedha hizi hupitia Bungeni kwa sababu <strong>si sadaka za ibada</strong>. Ni sehemu ya matumizi ya serikali katika sekta za afya na elimu kupitia taasisi zinazotoa huduma kwa niaba ya serikali. Hapo ndipo mjadala halisi ulipo.
+  </p>
+
+  <!-- HISTORIA -->
+  <h2>🏥 Chimbuko la MOU: Historia ya Huduma za Jamii</h2>
+
+  <p>
+    Baada ya sera za utaifishaji za miaka ya 1970, serikali ilijikuta na changamoto kubwa: hospitali hazitoshi, shule hazitoshi, hasa vijijini. Taasisi za dini tayari zilikuwa na hospitali, shule, zahanati, na mtandao mpana wa huduma.
+  </p>
+
+  <blockquote>
+    "Badala ya serikali kujenga kila kitu upya, tushirikiane na taasisi zilizopo tayari."
+  </blockquote>
+
+  <p>
+    Mwaka 1992 serikali ikaingia kwenye mfumo wa ushirikiano rasmi. Mantiki hiyo ikasababisha makanisa kuwa <em>"washirika wa utoaji huduma"</em> — inayojulikana kama <strong>Service Agency Model</strong>.
+  </p>
+
+  <!-- UKWELI 2 -->
+  <h2>💰 Ukweli wa Pili: Serikali Inawekeza Fedha za Walipa Kodi</h2>
+
+  <p>Leo hii serikali inafanya yafuatayo ndani ya mfumo wa MOU:</p>
+
+  <!-- GHARAMA TABLE -->
+  <div class="gharama-section">
+    <div class="gharama-header">
+      <h3>📊 Muhtasari wa Gharama za MOU (1992–2026)</h3>
+      <p>Makadirio ya matumizi ya fedha za umma ndani ya mfumo wa ushirikiano</p>
+    </div>
+
+    <div class="gharama-row">
+      <div class="cat">
+        <strong>1. Mishahara ya Watumishi (PE)</strong>
+        <div class="sub">Madaktari, wauguzi, walimu, mafundi wa afya</div>
+      </div>
+      <div class="per-yr">TSh Bil. 60–90 / mwaka</div>
+      <div class="total">≈ TSh Tri. 1.5–2 (jumla)</div>
+    </div>
+
+    <div class="gharama-row">
+      <div class="cat">
+        <strong>2. Ruzuku za Moja kwa Moja</strong>
+        <div class="sub">Bed grants, Basket Fund, dawa (MSD), fedha za uendeshaji</div>
+      </div>
+      <div class="per-yr">TSh Bil. 30–50 / mwaka</div>
+      <div class="total">≈ TSh Tri. 1+ (jumla)</div>
+    </div>
+
+    <div class="gharama-row">
+      <div class="cat">
+        <strong>3. Misamaha ya Kodi</strong>
+        <div class="sub">VAT, forodha, vifaa tiba, ambulance, ujenzi</div>
+      </div>
+      <div class="per-yr">TSh Bil. 250–400 / mwaka</div>
+      <div class="total">≈ TSh Tri. 3–4 (jumla)</div>
+    </div>
+
+    <div class="gharama-totals">
+      <div>
+        <div class="label">Kwa Mwaka</div>
+        <div class="amount">TSh Bil. 350–500</div>
+      </div>
+      <div>
+        <div class="label">Tangu 1992 Hadi 2026</div>
+        <div class="total-all">TSh Trilioni 5–7 (makadirio)</div>
+      </div>
+    </div>
+  </div>
+
+  <p>Hii ndiyo sababu suala hili haliwezi tena kujibiwa kwa sentensi fupi. Kwa sababu sasa ni suala la <strong>sera, fedha za umma, uwajibikaji, na usawa wa kitaifa</strong>.</p>
+
+  <!-- TATIZO HALISI -->
+  <h2>⚖️ Tatizo Halisi Si Huduma — Ni Uwazi</h2>
+
+  <p>Tatizo kubwa si kwamba makanisa yanatoa huduma. Hakuna anayebisha mchango mkubwa wa hospitali na shule za dini nchini — hospitali nyingi zimeokoa maisha ya mamilioni ya Watanzania.</p>
+
+  <p>Tatizo kubwa ni:</p>
+  <ul>
+    <li><strong>Uwazi</strong> — wananchi hawapati taarifa kamili</li>
+    <li><strong>Accountability</strong> — mfumo wa ukaguzi una mwanya</li>
+    <li><strong>Perception ya fairness</strong> — katika taifa lenye dini tofauti</li>
+  </ul>
+
+  <div class="warn-box">
+    <div class="label">⚠️ Hatari ya Hisia zisizoshughulikiwa:</div>
+    <p>Hisia za kutokuaminiana, perception ya unfairness, na ukosefu wa uwazi wa kitaifa — hizi ndizo zilizochochea migogoro mingi duniani. Hazikuanza kwa chuki wazi, bali kwa mashaka ya kimya.</p>
+  </div>
+
+  <!-- SUPER PROFIT -->
+  <h2>🩺 Hoja ya "Super Profit" na Hasira za Wananchi</h2>
+
+  <blockquote>
+    Kama serikali inalipa mishahara, inaleta dawa, inatoa ruzuku, na kuna misamaha ya kodi — kwa nini baadhi ya hospitali bado zina gharama kubwa sana?
+  </blockquote>
+
+  <p>
+    Wananchi wanaona mgongano kati ya <em>huduma ya kijamii</em> na <em>mfumo unaoonekana wa kibiashara</em>. Tatizo si kuuliza swali hilo. Tatizo ni kukosa mfumo wa wazi wa kujibu.
+  </p>
+
+  <!-- UKAGUZI -->
+  <h2>🔍 Mwanya wa Uwazi: Ukaguzi wa CAG</h2>
+
+  <div class="callout">
+    <p>✅ CAG anakagua: fedha zinazotoka serikalini</p>
+    <p>❌ Lakini: mapato ya ndani ya taasisi nyingi hukaguliwa na wakaguzi binafsi tu</p>
+    <p>Hilo linaacha maswali: Je, ruzuku za serikali zinashusha gharama kwa wananchi? Je, mapato ya ndani yanatumika vipi? Je, mfumo una uwiano wa haki kwa walipa kodi wote?</p>
+  </div>
+
+  <!-- HISIA ZA UDINI -->
+  <h2>⚠️ Hapa Ndipo Hisia za Udini Huanza</h2>
+
+  <p>Katika mazingira ya sintofahamu, mijadala kama hii hubeba tafsiri za kidini. Waislamu wengine huona upendeleo. Wakristo wengine huona mchango wao unapuuzwa. Na hapo ndipo taifa linaingia kwenye eneo hatari.</p>
+
+  <div class="warn-box">
+    <div class="label">🚨 Mzizi wa Migogoro ya Kidini Duniani:</div>
+    <ul>
+      <li>Hisia za kutokuaminiana zilizokusanyika polepole</li>
+      <li>Perception ya unfairness ndani ya mfumo wa serikali</li>
+      <li>Ukosefu wa uwazi unaofungua mlango wa propaganda</li>
+      <li>Ukimya wa viongozi unaozidisha mashaka</li>
+    </ul>
+  </div>
+
+  <!-- CHANGAMOTO -->
+  <h2>⚠️ Changamoto Kuu Tatu za Mfumo</h2>
+
+  <div class="changamoto-list">
+    <div class="ch-item">
+      <div class="num">1</div>
+      <div>
+        <h4>Mwananchi Kulipa Mara Mbili</h4>
+        <p>Kwanza kupitia kodi zake — kisha tena hospitalini kupitia user fees. Hii inaumiza hasa wananchi wa kipato cha chini.</p>
+      </div>
+    </div>
+    <div class="ch-item">
+      <div class="num">2</div>
+      <div>
+        <h4>Mwanya wa Ukaguzi</h4>
+        <p>CAG hukagua fedha za serikali — lakini mara nyingi haukagui mapato yote ya ndani ya hospitali na shule. Hilo linaacha pengo kubwa la uwajibikaji.</p>
+      </div>
+    </div>
+    <div class="ch-item">
+      <div class="num">3</div>
+      <div>
+        <h4>Swali la "Value for Money"</h4>
+        <p>Kama serikali tayari inalipia sehemu kubwa ya gharama, kwanini huduma bado ni ghali? Swali hili halijawahi kujibiwa rasmi kwa uwazi wa kutosha.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JINSI YA KULIPONYA -->
+  <h2>🛡️ Jinsi ya Kuliponya Taifa</h2>
+
+  <p>Tanzania haitaponywa kwa propaganda. Itaponywa kwa ukweli. Na ukweli unahitaji mambo matatu:</p>
+
+  <div class="solutions">
+    <div class="sol-item">
+      <div class="num">1</div>
+      <div>
+        <h4>Uwazi Kamili</h4>
+        <p>Taarifa zote za ruzuku, misamaha ya kodi, mishahara, na matumizi ya fedha ziwe wazi kwa wananchi wote — si kwa wachache.</p>
+      </div>
+    </div>
+    <div class="sol-item">
+      <div class="num">2</div>
+      <div>
+        <h4>Ukaguzi Mpana</h4>
+        <p>Taasisi yoyote inayopokea fedha kubwa za umma inapaswa kuwa na mfumo mpana wa uwajibikaji. Si kwa sababu ni ya dini — bali kwa sababu fedha ni za walipa kodi.</p>
+      </div>
+    </div>
+    <div class="sol-item">
+      <div class="num">3</div>
+      <div>
+        <h4>Siasa za Kupunguza Hofu</h4>
+        <p>Viongozi wa dini, serikali na wasomi wanapaswa kuzungumza kwa lugha ya ukweli, utulivu, na kujenga uaminifu. Ukimya huacha nafasi kwa propaganda.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAPENDEKEZO -->
+  <h2>✅ Mapendekezo ya Marekebisho</h2>
+
+  <div class="mapendekezo-list">
+    <div class="mp-item"><div class="icon">🔍</div><p>CAG apewe mamlaka ya ukaguzi mpana — ikijumuisha mapato ya ndani ya taasisi zinazopokea ruzuku</p></d
