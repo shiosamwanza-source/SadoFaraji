@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Calculators: Savings & Loan Optimization Engine</title>
+    <!-- Tailwind CSS v4 for modern design framework -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header class="bg-indigo-700 text-white shadow-md py-8 text-center">
+        <h1 class="text-2xl md:text-3xl font-bold tracking-tight">Advanced Financial Calculators</h1>
+        <p class="text-indigo-200 mt-2 text-sm md:text-base">Optimize your corporate and personal capital structures with algorithmic precision.</p>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="flex-grow container mx-auto px-4 py-8 max-w-4xl">
+        
+        <!-- Navigation Tabs: Optimizing UX by reducing page clicks -->
+        <div class="flex border-b border-slate-200 mb-8 bg-white rounded-t-lg shadow-sm overflow-hidden">
+            <button id="tab-savings-btn" onclick="switchTab('savings')" class="flex-1 py-4 px-6 text-center font-semibold border-b-2 border-indigo-600 text-indigo-600 focus:outline-none transition-all cursor-pointer">
+                💰 Savings & Fixed Deposit Calculator
+            </button>
+            <button id="tab-loan-btn" onclick="switchTab('loan')" class="flex-1 py-4 px-6 text-center font-semibold border-b-2 border-transparent text-slate-500 hover:text-indigo-600 hover:border-slate-300 focus:outline-none transition-all cursor-pointer">
+                🏦 Debt & Loan Repayment Calculator
+            </button>
+        </div>
+
+        <!-- ==================== TOOL 1: SAVINGS CALCULATOR ==================== -->
+        <div id="savings-tab" class="tab-content active bg-white p-6 md:p-8 rounded-b-lg shadow-md">
+            <h2 class="text-xl font-bold text-slate-900 mb-6 border-b border-slate-100 pb-2">Fixed Deposit Investment Analytics</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Input Fields -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Principal Amount (Capital)</label>
+                        <input type="number" id="savings-principal" value="5000" class="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Annual Interest Rate (APY %)</label>
+                        <input type="number" step="0.1" id="savings-rate" value="7.5" class="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Duration (Years)</label>
+                        <input type="number" id="savings-years" value="5" class="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    </div>
+                    <button onclick="calculateSavings()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md shadow transition-colors cursor-pointer mt-2">
+                        Calculate Investment Growth
+                    </button>
+                </div>
+                
+                <!-- Output Panel (Visual Hierarchy Layout) -->
+                <div class="bg-indigo-50/50 p-6 rounded-lg border border-indigo-100 flex flex-col justify-between">
+                    <h3 class="text-sm font-bold text-indigo-900 tracking-wider uppercase mb-4">Projected Yield Analytics</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="block text-xs text-slate-500">Initial Capital Input:</span>
+                            <span id="res-savings-principal" class="text-lg font-semibold text-slate-800">$5,000</span>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-slate-500">Total Interest Generated:</span>
+                            <span id="res-savings-interest" class="text-xl font-bold text-emerald-600">+$1,875</span>
+                        </div>
+                        <div class="border-t border-indigo-100 pt-3">
+                            <span class="block text-xs text-slate-500">Total Asset Value at Maturity:</span>
+                            <span id="res-savings-total" class="text-2xl font-black text-indigo-700">$6,875</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO Content & High-Ticket B2B Lead Capture Framework -->
+            <div class="mt-12 pt-6 border-t border-slate-100 prose prose-slate max-w-none text-slate-600 text-sm leading-relaxed space-y-4">
+                <h3 class="text-base font-bold text-slate-900">Strategic Guide: Capital Growth Optimization Through Fixed Deposit Structures</h3>
+                <p>In the contemporary financial ecosystem, utilizing Fixed Deposit accounts serves as a robust vehicle for risk mitigation and capital preservation against inflationary pressures. Unlike standard liquidity accounts, fixed-term deposits leverage the principles of structured interest yields to guarantee a predictable Return on Investment (ROI). Successful asset accumulation depends heavily on optimizing three primary vectors: the Principal Investment, the Annual Percentage Yield (APY) offered by institutional frameworks, and the Duration of Maturity. Prior to committing liquidity, an agile cash flow analysis is paramount, as premature withdrawals often attract structural penalties.</p>
+                
+                <div class="bg-slate-900 text-slate-100 p-6 rounded-lg shadow-inner mt-6">
+                    <h4 class="text-indigo-400 font-bold mb-2 flex items-center">📊 B2B Strategic Consulting & Advisory</h4>
+                    <p class="text-slate-300 text-xs mb-4">Have you quantified your projected yields and secured capital ready for strategic deployment? Transitioning from capital preservation to high-yield project execution requires rigorous market validation. We specialize in engineering bankable Project Proposals, comprehensive Business Plans, and Financial Feasibility Reports powered by cutting-edge digital intelligence frameworks.</p>
+                    <a href="YOUR_LINKEDIN_PROFILE_URL" target="_blank" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs py-2 px-4 rounded transition-colors">
+                        Click Here to Connect on LinkedIn &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TOOL 2: LOAN CALCULATOR ==================== -->
+        <div id="loan-tab" class="tab-content bg-white p-6 md:p-8 rounded-b-lg shadow-md">
+            <h2 class="text-xl font-bold text-slate-900 mb-6 border-b border-slate-100 pb-2">Corporate Debt Capacity Analytics</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Input Fields -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Loan Capital (Principal)</label>
+                        <input type="number" id="loan-amount" value="50000" class="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Annual Interest Rate (%)</label>
+                        <input type="number" step="0.1" id="loan-rate" value="10.5" class="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Amortization Period (Months)</label>
+                        <input type="number" id="loan-months" value="36" class="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    </div>
+                    <button onclick="calculateLoan()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md shadow transition-colors cursor-pointer mt-2">
+                        Calculate Debt Service
+                    </button>
+                </div>
+                
+                <!-- Output Panel -->
+                <div class="bg-indigo-50/50 p-6 rounded-lg border border-indigo-100 flex flex-col justify-between">
+                    <h3 class="text-sm font-bold text-indigo-900 tracking-wider uppercase mb-4">Debt Amortization Summary</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="block text-xs text-slate-500">Equated Monthly Installment (EMI):</span>
+                            <span id="res-loan-monthly" class="text-2xl font-black text-indigo-700">$1,625.30</span>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-slate-500">Cumulative Cost of Interest:</span>
+                            <span id="res-loan-interest" class="text-lg font-semibold text-rose-600">$8,510.74</span>
+                        </div>
+                        <div class="border-t border-indigo-100 pt-3">
+                            <span class="block text-xs text-slate-500">Total Debt Servicing Obligation:</span>
+                            <span id="res-loan-total" class="text-xl font-bold text-slate-800">$58,510.74</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO Content & High-Ticket B2B Lead Capture Framework -->
+            <div class="mt-12 pt-6 border-t border-slate-100 prose prose-slate max-w-none text-slate-600 text-sm leading-relaxed space-y-4">
+                <h3 class="text-base font-bold text-slate-900">Executive Analytics: Corporate Debt Capacity and Service Management Assessments</h3>
+                <p>Corporate expansion and structural scaling frequently necessitate the integration of debt financing into an organization's capital structure. However, the critical determinant of enterprise longevity is not the acquisition of capital, but the strategic architecture of Debt Service Management. Utilizing an automated Loan Repayment Calculator allows decision-makers to evaluate Equated Monthly Installments (EMIs) proactively, ensuring that structural leverage does not impede near-term working capital requirements. Key operational metrics include the Debt-to-Income ratio, the choice between Reducing Balance vs. Flat Rate interest structures, and associated regulatory or institutional processing fees. Debt must function strictly as an economic accelerator, yielding returns that outpace the compounding cost of capital.</p>
+                
+                <div class="bg-slate-900 text-slate-100 p-6 rounded-lg shadow-inner mt-6">
+                    <h4 class="text-indigo-400 font-bold mb-2 flex items-center">🏦 Corporate Fundraising & Institutional Strategy</h4>
+                    <p class="text-slate-300 text-xs mb-4">Before presenting capital acquisition requests to banking institutions or venture syndicates, organizations must command rigorous, institutional-grade documentation that verifies operational viability and debt-servicing capacity. We design market-ready Credit Proposals, authoritative Company Profiles, and algorithmic Financial Models optimized for underwriting compliance.</p>
+                    <a href="YOUR_LINKEDIN_PROFILE_URL" target="_blank" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs py-2 px-4 rounded transition-colors">
+                        Click Here to Speak with a Consultant on LinkedIn &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-800 text-slate-400 py-4 text-center text-xs mt-12">
+        &copy; 2026 Financial Optimization Suite. Advanced Digital Assets.
+    </footer>
+
+    <!-- JAVASCRIPT ALGORITHMIC ENGINE -->
+    <script>
+        // Tab Controller Framework
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.getElementById('tab-savings-btn').className = "flex-1 py-4 px-6 text-center font-medium border-b-2 border-transparent text-slate-500 hover:text-indigo-600 focus:outline-none transition-all cursor-pointer";
+            document.getElementById('tab-loan-btn').className = "flex-1 py-4 px-6 text-center font-medium border-b-2 border-transparent text-slate-500 hover:text-indigo-600 focus:outline-none transition-all cursor-pointer";
+
+            if (tabName === 'savings') {
+                document.getElementById('savings-tab').classList.add('active');
+                document.getElementById('tab-savings-btn').className = "flex-1 py-4 px-6 text-center font-semibold border-b-2 border-indigo-600 text-indigo-600 focus:outline-none transition-all cursor-pointer";
+            } else {
+                document.getElementById('loan-tab').classList.add('active');
+                document.getElementById('tab-loan-btn').className = "flex-1 py-4 px-6 text-center font-semibold border-b-2 border-indigo-600 text-indigo-600 focus:outline-none transition-all cursor-pointer";
+            }
+        }
+
+        // Global Currency Formatter (ISO Standard)
+        function formatMoney(number) {
+            return '$' + number.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        // Engine 1: Simple/Compound Yield Accumulation
+        function calculateSavings() {
+            const principal = parseFloat(document.getElementById('savings-principal').value) || 0;
+            const rate = parseFloat(document.getElementById('savings-rate').value) || 0;
+            const years = parseFloat(document.getElementById('savings-years').value) || 0;
+
+            const interest = (principal * rate * years) / 100;
+            const total = principal + interest;
+
+            document.getElementById('res-savings-principal').innerText = formatMoney(principal);
+            document.getElementById('res-savings-interest').innerText = '+' + formatMoney(interest);
+            document.getElementById('res-savings-total').innerText = formatMoney(total);
+        }
+
+        // Engine 2: Debt Amortization (PMT Standard Formula)
+        function calculateLoan() {
+            const amount = parseFloat(document.getElementById('loan-amount').value) || 0;
+            const annualRate = parseFloat(document.getElementById('loan-rate').value) || 0;
+            const months = parseFloat(document.getElementById('loan-months').value) || 0;
+
+            if (amount === 0 || annualRate === 0 || months === 0) return;
+
+            const monthlyRate = (annualRate / 100) / 12;
+            const x = Math.pow(1 + monthlyRate, months);
+            const monthlyPayment = (amount * monthlyRate * x) / (x - 1);
+            
+            const totalPayment = monthlyPayment * months;
+            const totalInterest = totalPayment - amount;
+
+            document.getElementById('res-loan-monthly').innerText = formatMoney(monthlyPayment);
+            document.getElementById('res-loan-interest').innerText = formatMoney(totalInterest);
+            document.getElementById('res-loan-total').innerText = formatMoney(totalPayment);
+        }
+
+        // Master Layout Initialization Trigger
+        calculateSavings();
+        calculateLoan();
+    </script>
+</body>
+</html>
